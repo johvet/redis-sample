@@ -1,0 +1,18 @@
+%h1 Using Redis
+%p
+  To show the difference, please run this agains your local redis:
+  %pre
+    redis-cli set 'sample' 'something funny'
+
+%table
+  %thead
+    %tr
+      %td Method
+      %td Value of 'sample'
+  %tbody
+    %tr
+      %td Redis.new
+      %td= @rv.inspect
+    %tr
+      %td Redis::Store::Factory.create
+      %td= @rsv.inspect
